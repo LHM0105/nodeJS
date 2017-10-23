@@ -1,0 +1,14 @@
+{
+  "name": "3day2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "spiderGet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
+}

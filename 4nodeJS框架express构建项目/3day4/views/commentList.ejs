@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>评论列表页</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 500px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>评论列表页</h1>
+    <table border="1">
+        <tr>
+            <td>序号</td>
+            <td>标题</td>
+            <td>内容</td>
+            <td>用户</td>
+            <td>操作</td>
+        </tr>
+        <% results.forEach(function(val,index){ %>
+            <tr>
+                <td><%= val.uid %></td>
+                <!-- href中的./相当于当前目录，当前在/comment/list -->
+                <td><a href="./detail?uid=<%= val.uid %>"><%= val.title %></a></td>
+                <td><%= val.content %></td>
+                <td><%= val.username %></td>
+                <td><input type="button" value="删除" onclick="location.href='./deleteOK?uid=<%= val.uid %>'" /></td>
+            </tr>
+        <% }) %>
+       
+        </table>
+
+  </body>
+</html>

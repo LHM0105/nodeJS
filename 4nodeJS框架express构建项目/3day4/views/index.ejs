@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>主页面</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>主页面</h1>
+    <!-- 如果username存在，显示注销 -->
+    <% if(username){ %>
+      <h4>欢迎你，<%=username%></h4>
+      <input type="button" id="loginout" value="注销" onclick="location.href='/loginout'"/>
+      <input type="button" id="comment" value="评论" onclick="location.href='/comment'" />
+    <% }else{ %>
+
+      <input type="button" value="注册" onclick="location.href='/register'" />
+      <input type="button" value="登录" onclick="location.href='/login'" />
+
+    <% } %>
+
+
+  </body>
+</html>

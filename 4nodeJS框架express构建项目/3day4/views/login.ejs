@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>登录页</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>登录页</h1>
+    <!-- action=""是找到router中的这块路由，然后执行里面的逻辑，这个是在user中 -->
+    <form method="post" action="/users/login">
+	    <input type="text" placeholder="用户名" name="username" />
+	    <input type="password" name="psw" />
+	    <input type="submit" value="登录" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Document</title>
+</head>
+<body>
+    <div id="chatroom" style="width:400px;height:
+    300px;border:1px solid #ccc;">
+</div>
+<input type="text" id="ipt" placeholder="请输入内容" />
+<input type="button" value="发送" onclick="send()" />
+    <script src="websocketClient.js"></script>
+    <script>
+        function send(){
+            ws.send(ipt.value)
+            ipt.value="";
+        }
+    </script>
+</body>
+</html>

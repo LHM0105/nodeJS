@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>评论页</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%- include('header.ejs')%>
+    <h1>评论页</h1>
+    <!-- 找到comment路由文件 -->
+    <form action="/comment/save" method="post">
+        标题：<input type="text" name="title"/>
+        <br><br>
+        内容：<textarea cols="60" rows="10" name="text"></textarea>
+        <br><br>
+        <input type="submit" value="提交"/>
+    </form>
+
+  </body>
+</html>

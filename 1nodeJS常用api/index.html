@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<h2>创建服务对象</h2>
+		<p>引入http模块</p>
+		<p>http.createServer(function(req,res){
+			res.writeHeader(200,{"Content-Type":"text/html;charset='utf-8'"});
+			res.write("输出的内容");
+			res.end();//请求结束。否则浏览器会一直处于刷新状态
+		}).listen(3000)</p>
+		
+		<h2>关于node</h2>
+		<p>基于chrome v8引擎的  以事件驱动和非阻塞I/O流 构建的模型  ，轻量 高效（node中使用的语言是javascript）</p>
+		<p>npm是目前 世界上 最大的 包管理器</p>
+		<p>node 基于commonJS规范</p>
+		
+		<p>amd 异步加载规范  提前引入，代表框架requireJS</p>
+		<p>cmd 通用加载规范  按需引入，代表框架seaJS</p>
+		<p>commonJS 按需加载，核心：接收和暴露</p>
+		<p>接受需要用require</p>
+		<p>暴露用module.exports</p>
+		<p>var util = {<br />
+			sayHello:function(){<br />
+				return "hello 1706";<br />
+			},<br />
+			add:function(x,y){<br />
+				return x+y;<br />
+			}<br />
+		}<br />
+		module.exports = util;//暴露全部<br />
+		//exports.add = util.add;//暴露部分</p><br />
+
+		<h2>关于node中的api</h2>
+		<h3>url模块：</h3>
+		<h4>方法</h4>
+		<p>parse|urlStr parseQueryString slashesDenoteHost 将路径字符串解析为路径对象</p>
+		<p>urlStr 要解析的路径字符串</p>
+		<p>parseQueryString 布尔类型，主要用来解析query，设置为true时，query一项的值是对象格式</p>
+		<p>slashesDenoteHost 布尔类型，当不确定要请求的协议时，辅助进行解析，设置为true可以帮助解析</p>
+		<p>format|urlObj parseObj slashesObj 将路径对象转化为路径字符串</p>
+		<p>urlObj 要解析的路径对象</p>
+		
+		<p>resolve | from to 将基础路径和后缀路径转为目标路径</p>
+		<p>注意：基本路径要在最后添加‘/’，否则合并会找到最近的‘/’并替换其后面的内容</p>
+		
+		<h3>queryString模块：为查询字符串提供扩展</h3>
+		<h4>方法</h4>
+		<p>parse|str con seq 将查询字符串转为对象，参数与stringify相同</p>
+		<p>str 查询数据 字符串</p>
+		<p>stringify|strObj con seq 将查询数据对象转为字符串</p>
+		<p>strObj 查询数据 对象</p>
+		<p>con 键值对之间的分隔符，默认是“&”</p>
+		<p>seq 键与值之间的分隔符，默认为“=”</p>
+		
+		<p>escape 相当于encodeURI 将Asc编码转换成utf-8</p>
+		<p>unescape 相当于decodeURI 将utf-8转为Asc编码</p>
+		
+		<h3>events模块 对事件进行处理</h3>
+		<h4>方法</h4>
+		<p>在node中的事件我们使用on或者once进行监听</p>
+		<p>往往配合推送emit去使用</p>
+		<p>once 只能监听一次；on 时刻进行监听</p>
+		
+		<h3>fs(filesystem)模块  文件管理系统</h3>
+		<h4>方法</h4>
+		<p>stat(path,callback(err,statsdata){}) 获取与文件相关的信息</p>
+		<p>mkdir(path,callback(err){}) 新增目录</p>
+		<p>writeFile(path,con,callback(err){}) 新增文件</p>
+		<p>appendFile(path,con,callback(err){})追加内容</p>
+		<p>readFile(path,charset,callback(err,data){}) 读取文件内容</p>
+		<p>resddir(path,callback(err,filedata){}) 读取文件目录</p>
+		<p>rmdir(path,callback(err){}) 删除目录</p>
+		<p>*空文件夹才能被删除，所以在删除文件夹前需要把其中的文件全部删除</p>
+		<p>fs.readdirSync("img").map((file) => {
+			fs.unlink(`img/${file}`,(err) => {
+				console.log("删除文件夹中所有文件");
+			});
+		});</p>
+		<p>unlink(path,callback(err){}) 删除文件</p>
+	</body>
+</html>
